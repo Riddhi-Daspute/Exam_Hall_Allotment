@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Hall Allotment Entry</title>
+
+    <style>
+        body{background-color: #f4f7fb;}
+        h2{text-align: center; color:#1F3864}
+        form{width: 250px; padding: 30px ; border: 1px solid black; margin: auto;}
+        input{width:100%; padding: 8px auto;}
+        select{width:100%; padding: 6px 10px;}
+    </style>
+</head>
+<body>
+
+    <h2>Exam Hall Allotment Entry</h2>
+    <form name="form" action="result.jsp" method="post" onsubmit="Validate()">
+
+        <label for="rollno">Roll No</label><br>
+        <input type="number" id="rn" name="rollno" required><br><br>
+
+        <label for="hall">Hall</label><br>
+        <select name="all">
+            <option value="">--Select--</option>
+            <option value="hallA">Hall A</option>
+            <option value="hallB">Hall B</option>
+            <option value="hallC">Hall C</option>
+        </select><br><br>
+
+        <label for="benchno">Bench No</label><br>
+        <input type="number" id="bno" name="benchno"><br><br>
+
+        <button type="submit" value="save" style="background-color: #1F3864; color: white; border: none; margin-left: 35%; padding:7px 18px">
+            Save</button>
+    </form>
+    
+    <script>
+        function Validate(){
+
+        let rollno = document.form.getElementById("rn");
+        let benchno = document.form.getElementById("bno");
+        
+        if(rollno=""){
+            alert("Please enter roll no");
+        }
+
+        if(bno > 30){
+            alert("No benches available");
+            return false;
+        } 
+        if(bno === bno){
+            alert("bench already assigned");
+            return false;
+        }
+        return true;
+        alert("Allotment successfull");
+
+        };
+    </script>
+</body>
+</html>
